@@ -50,8 +50,14 @@ mayhemApp.config(['$routeProvider',
           $location.path( "/" );
         }
       }else{
-       /* next.templateUrl.replace("")
-        if($rootScope.loggedUser.permissions)*/
+        if(next.templateUrl){
+          var page = next.templateUrl;
+          page = page.replace("partials/","").replace(".html","");
+          console.log("we3"+$rootScope.loggedUser.permissions.indexOf(page));
+          if($rootScope.loggedUser.permissions.indexOf(page)==-1){
+            $location.path( "/"+ $rootScope.loggedUser.permissions[0]);
+          }
+        }
       }      
     });
   });
