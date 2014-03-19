@@ -4,12 +4,8 @@
 
 var mayhemServices = angular.module('mayhemServices', ['ngResource']);
 
-mayhemServices.factory('User', ['$resource',
+mayhemServices.factory('Login', ['$resource',
   function($resource){
-    /*return $resource('phones/:phoneId.json', {}, {
-      query: {method:'GET', params:{phoneId:'phones'}, isArray:true}
-    });*/
-
 	return {
 		doLogin : function (user,password){
 			console.log("doLogin("+user+","+password+")");
@@ -20,7 +16,7 @@ mayhemServices.factory('User', ['$resource',
 			}
 		},
 		loadPermissions : function(user){
-			return ['tab1','tab3']
+			return ['tab2','tab3']
 		}
 	};
 

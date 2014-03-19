@@ -10,16 +10,13 @@ mayhemControllers.controller('GlobalCtrl', ['$scope',
   }]
 );
 
-mayhemControllers.controller('LoginCtrl', ['$scope', '$location', 'User',
-  function($scope, $location, User) {
+mayhemControllers.controller('LoginCtrl', ['$scope', '$location', 'Login',
+  function($scope, $location, Login) {
     $scope.loginInfo = {};
     $scope.login = function(){
-      if(User.doLogin($scope.loginInfo.j_username, $("[name=lpassword]").val())){
-        console.log("akiiii2")
+      if(Login.doLogin($scope.loginInfo.j_username, $("[name=lpassword]").val())){
         $scope.loggedUser.uid = $scope.loginInfo.j_username;
-        console.log("akiiii3")
-        $scope.loggedUser.permissions = User.loadPermissions($scope.loggedUser.uid);
-        console.log("akiiii5")
+        $scope.loggedUser.permissions = Login.loadPermissions($scope.loggedUser.uid);
         $location.path( "/"+$scope.loggedUser.permissions[0]);
       }
      }

@@ -33,9 +33,9 @@ mayhemApp.config(['$routeProvider',
       otherwise({
         redirectTo: '/'
       });
-  }]).run( function($rootScope, $location, $http, User) {
+  }]).run( function($rootScope, $location, $http, Login) {
 
-    console.log("-----"+User);
+    console.log("-----"+Login);
     $rootScope.loggedUser = {uid : undefined,
                              permissions: undefined};
     //TODO Llamar para ver si está logado ya y cargar el contexto loggedUser en la vista
@@ -49,6 +49,9 @@ mayhemApp.config(['$routeProvider',
           console.log("redirecting to /")
           $location.path( "/" );
         }
-      }       
+      }else{
+       /* next.templateUrl.replace("")
+        if($rootScope.loggedUser.permissions)*/
+      }      
     });
   });
