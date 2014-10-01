@@ -4,6 +4,7 @@
 var mayhemApp = angular.module('mayhemApp', [
   'ngRoute',
   'mayhemControllers',
+  'mayhemComponents',
   'mayhemServices'
 ]);
 

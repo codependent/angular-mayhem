@@ -40,13 +40,3 @@ mayhemControllers.controller('Tab3Ctrl', ['$scope',
     $scope.globalState.selectedTab = 'tab3';
   }]
 );
-
-mayhemControllers.controller('Comp1Ctrl', ['$scope',
-  function($scope) {
-  }]
-);
-
-mayhemControllers.controller('Comp2Ctrl', ['$scope',
-  function($scope) {
-  }]
-);
